@@ -33,9 +33,13 @@ const WhatGPT3 = () => {
         <p>Explore The Library</p>
       </div>
       <div className="gpt3__whatgpt3-features">
-        <Feature title={data[1].title} text={data[1].text} />
-        <Feature title={data[2].title} text={data[2].text} />
-        <Feature title={data[3].title} text={data[3].text} />
+        {data.map((item, index) => (
+          <Feature
+            title={item.title}
+            text={item.text}
+            key={item.title + index}
+          />
+        ))}
       </div>
     </div>
   );
